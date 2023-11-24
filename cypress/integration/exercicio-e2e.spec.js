@@ -1,21 +1,23 @@
 /// <reference types="cypress" />
 
-context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
-    /*  Como cliente 
-        Quero acessar a Loja EBAC 
-        Para fazer um pedido de 4 produtos 
-        Fazendo a escolha dos produtos
-        Adicionando ao carrinho
-        Preenchendo todas opções no checkout
-        E validando minha compra ao final */
+import faker from 'faker';
 
-    beforeEach(() => {
-        cy.visit('/')
-    });
-
-    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //TODO 
-    });
+describe("Exercício - Testes End-to-end - Fluxo de pedido", () => {
+  beforeEach(() => {
+    cy.preCadastro();
+    cy.screenshot();
+  });
 
 
-})
+  it("Deve adicionar 4 produtos ao carrinho e finalizar a compra", () => {
+    cy.adicionarProdutosAoCarrinho();
+    cy.screenshot();
+    const cep = faker.address.zipCode("#####-###");
+    const telefone = faker.phone.phoneNumber("(##) #####-####");
+    const cidade = faker.address.city();
+    const rua = faker.address.streetName();
+
+    cy.finalizarCompra(cep, telefone, cidade, rua);
+    cy.screenshot();
+  });
+});
