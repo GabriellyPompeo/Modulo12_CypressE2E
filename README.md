@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Testes End to End - Ebac Shop
 ### Exercício para os alunos de Qualidade de software da EBAC 
 
@@ -52,3 +53,7 @@ Qualidade de software
 
 
 
+=======
+# Modulo12_CypressE2E
+Repositório para resolução do exercício do módulo 12 do curso de Engenharia de Qualidade de Software, da EBAC
+>>>>>>> 120737ee97021262222bdaf80443582e094a86b8
