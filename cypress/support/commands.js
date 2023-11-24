@@ -27,7 +27,7 @@ Cypress.Commands.add("preCadastro", () => {
   cy.wrap({ email, password }).as("userData");
 });
 
-Cypress.Commands.add("adicionarProdutosAoCarrinho", () => {
+Cypress.Commands.add("adicionarProdutosAoCarrinho", () => { 
   cy.visit("http://lojaebac.ebaconline.art.br/produtos/");
   cy.get(
     ".post-2559 > .product-block > .caption > .meta > .infor > .name > a"
